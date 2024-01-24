@@ -33,6 +33,7 @@ def zScore(districs,mark):
     "DRAMA & THEATRE  ||  Swami Vipulananda Institute of Aesthetic Studies",
     "FOOD BUSINESS MANAGEMENT [Commerce Stream]  ||  Sabaragamuwa University of Sri Lanka"
 ]
+   
     distric_index = locations.index(districs)
     f = open("firstpage_175_no_col.csv","r").readlines()
     my_district = f[distric_index].split(",")
@@ -51,10 +52,12 @@ def zScore(districs,mark):
     
     for i in selected_index:
         selected.append(data_list[i])
-    return (selected)             
+    #     print(data_list[i])
+    # return (selected)             
 
 
-# zScore("RATNAPURA",-0.3596)
+zScore("RATNAPURA",1.372)
+
 def subs(s1,s2,s3):
     course_set = {
     "COMBINED MATHEMATICS",
