@@ -48,27 +48,26 @@ def zScore(districs,mark):
         try:
             if float(my_district[i])<= mark:
                 selected_index.append(i)
-                # print(my_district[i])
+                
         except:
-            # print("cant "+str(i))     
+            
             pass   
     
     for i in selected_index:
         selected.append(data_list[i])
-        # print([i])
+        
         pass
     print(len(data_list))
     print(len(my_district))
-    # print((my_district))
-    # print (selected)             
-
+   
+    
     return (selected)             
 
 
 # zScore("RATNAPURA",1.372)
 
 def subs(s1,s2,s3):
-    # g= open("will","a")
+
     subjects_all = {
     "COMBINED MATHEMATICS",
     "BUDDHISM",
@@ -138,22 +137,15 @@ def subs(s1,s2,s3):
     cap_subjects = []
     for i in range(len(k)):
         one_line_sub = k[i].split("||")[1].split(",")
-        # print(k[i].split("||")[0])
+  
         for p in range(len(one_line_sub)):
             one_line_sub[p] = one_line_sub[p].strip()
-            
-        # print(one_line_sub,file=g)
-        # print(s2,file=g)
-        # print(len(k))
-        # print(i)
-        # print(len(k[i].split("||")))
-        # print(one_line_sub,file=g)
-        # print(s1 in one_line_sub,file=g)
+        
         if (s1 in one_line_sub) and (s2 in one_line_sub) and (s3 in one_line_sub):
             cap_subjects.append(k[i].split("||")[0])
             
         
-        # break
+
     print(cap_subjects)
         
 ss1 = "COMBINED MATHEMATICS"
@@ -161,5 +153,5 @@ ss2 = "BUDDHISM"
 ss3 = "SCIENCE FOR TECHNOLOGY"
 
 subs(ss1,ss2,ss3)
-# Print the set
+
 
