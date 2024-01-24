@@ -47,18 +47,19 @@ def zScore(districs,mark):
     for i in range(len(my_district)):
         try:
             if float(my_district[i])<= mark:
-                selected_index.append(i)
+                combine = f"{i}||{mark}"
+                selected_index.append(combine)
                 
         except:
             
             pass   
     
-    for i in selected_index:
-        selected.append(data_list[i])
+    for j in selected_index:
+        pp= int(j.split("||")[0])
+        selected.append(f"{data_list[pp]} $ {(j.split('||')[1])}")
         
         pass
-    print(len(data_list))
-    print(len(my_district))
+    
    
     
     return (selected)             
@@ -146,12 +147,29 @@ def subs(s1,s2,s3):
             
         
 
-    print(cap_subjects)
+    return(cap_subjects)
         
 ss1 = "COMBINED MATHEMATICS"
 ss2 = "BUDDHISM"
 ss3 = "SCIENCE FOR TECHNOLOGY"
 
-subs(ss1,ss2,ss3)
+g = open("will","a")
+# print(subs(ss1,ss2,ss3),file=g)
+# print(zScore("RATNAPURA",1.372),file=g)
+
+def Main(ss1,ss2,ss3,distric,zScr,bais=0.4):
+        com = []
+        sub_pos =subs(ss1,ss2,ss3) 
+        z_pos = zScore(distric,zScr+bais)
+        for i in z_pos:
+            if i.split("||")[0] in sub_pos:
+                com.append(i)
+                
+        print(com,file=g)
+            
+if __name__ == "__main__":
+    Main()        
+    
+
 
 
