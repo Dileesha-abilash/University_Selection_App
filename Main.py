@@ -65,10 +65,10 @@ def zScore(districs,mark):
     return (selected)             
 
 
-zScore("RATNAPURA",1.372)
+# zScore("RATNAPURA",1.372)
 
 def subs(s1,s2,s3):
-    g= open("will","a")
+    # g= open("will","a")
     subjects_all = {
     "COMBINED MATHEMATICS",
     "BUDDHISM",
@@ -136,18 +136,22 @@ def subs(s1,s2,s3):
     file_subject_req = open("test")
     k = file_subject_req.readlines()
     cap_subjects = []
-    for i in k:
-        one_line_sub = k.split("||")[1].split(",")
-        print(k.split("||")[0])
-        for ll in range(len(one_line_sub)):
-            one_line_sub[ll] = one_line_sub[ll].strip()
+    for i in range(len(k)):
+        one_line_sub = k[i].split("||")[1].split(",")
+        # print(k[i].split("||")[0])
+        for p in range(len(one_line_sub)):
+            one_line_sub[p] = one_line_sub[p].strip()
             
-        print(one_line_sub,file=g)
-        print(s2,file=g)
         # print(one_line_sub,file=g)
-        print(s1 in one_line_sub,file=g)
+        # print(s2,file=g)
+        # print(len(k))
+        # print(i)
+        # print(len(k[i].split("||")))
+        # print(one_line_sub,file=g)
+        # print(s1 in one_line_sub,file=g)
         if (s1 in one_line_sub) and (s2 in one_line_sub) and (s3 in one_line_sub):
-            cap_subjects.append(k.split("||")[0])
+            cap_subjects.append(k[i].split("||")[0])
+            
         
         # break
     print(cap_subjects)
